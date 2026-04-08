@@ -1,11 +1,11 @@
 <script>
-    import { onMount} from "svelte"; //sono delle dunzioni che avvengono in momenti specifici ovvero in questo caso quando il componente viene montato
     let size = $state(50); //sono i due state che associeremo ai 2 input
     let color = $state("aff3e00");
 
     let canvas 
 
-    onMount(() => {
+    //l'effect viene generato ogni volta mentre l'onmount viene eseguito solo una volta, 
+    $effect(() => {
         const context = canvas.getContext("2d");
         context.clearRect(0, 0, canvas.width, canvas.height) //pulisco il canvas, altrimenti ogni volta che cambio la size o il colore, disegno un nuovo quadrato sopra quello vecchio e non si vede più niente
 
