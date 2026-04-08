@@ -1,5 +1,7 @@
 <script> //scrivo il javascript qui dentro
     import ClicksCounter from "../components/ClicksCounter.svelte"; //sono le due componenti che ho creato e le importo nella pagina principale, in questo modo posso usarle come se fossero dei tag html
+    import CanvasSquare from "../components/CanvasSquare.svelte"; //per fare comparire la linea sella size e il colore
+
     let count = $state(5)
     let doubled = count * 2;
 
@@ -11,6 +13,8 @@
 <ClicksCounter bind:initialCount={count}/> 
 <p>count from parent is {count}</p>
 <ClicksCounter initialCount={3}/> 
+
+<CanvasSquare/>
 
 <style>
     h1 {
