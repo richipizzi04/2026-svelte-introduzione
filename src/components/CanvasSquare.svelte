@@ -1,15 +1,18 @@
 <script>
+    import { untrack } from "svelte"; //elimina la dipendenza tra le variabili, in questo caso tra size e color, in questo modo quando cambio il colore non viene eseguito l'effect che disegna il quadrato, ma viene eseguito solo quando cambio la size, e viceversa, in questo modo evito di disegnare un nuovo quadrato ogni volta che cambio una delle due variabili
+
     let size = $state(50); //sono i due state che associeremo ai 2 input
     let color = $state("aff3e00");
 
     let canvas 
 
-    //l'effect viene generato ogni volta mentre l'onmount viene eseguito solo una volta, 
+    //l'effect viene generato ogni volta (ovvero ogni volta che cambio le dimensioni size e colore del quadrato) mentre l'onmount viene eseguito solo una volta, 
     $effect(() => {
         const context = canvas.getContext("2d");
         context.clearRect(0, 0, canvas.width, canvas.height) //pulisco il canvas, altrimenti ogni volta che cambio la size o il colore, disegno un nuovo quadrato sopra quello vecchio e non si vede più niente
 
-        context.fillStyle = color; //imposto il colore di riempimento del quadrato
+        context.fillStyle = untrack(() => color); //imposto il colore di riempimento del quadrato 
+                                                  //grazie a untrack, quando cambio il colore, non viene eseguito l'effect che disegna il quadrato, ma viene eseguito solo quando cambio la size
         context.fillRect(0, 0, size, size); 
     })
     
