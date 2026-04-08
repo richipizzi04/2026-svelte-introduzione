@@ -2,7 +2,7 @@
     let size = $state(50); //sono i due state che associeremo ai 2 input
     let color = $state("aff3e00");
 
-    let canvas = document.querySelector("canvas"); 
+    let canvas 
 
     const context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height) //pulisco il canvas, altrimenti ogni volta che cambio la size o il colore, disegno un nuovo quadrato sopra quello vecchio e non si vede più niente
@@ -15,7 +15,7 @@
 <h3>Canvas Square</h3>
 
 <article>
-    <canvas width="100" height="100"></canvas> <!--è uno spazio vuoto che ci permete di disegnare ogni singolo pixel, usato per fare disegni 2d, mettere disegni 3d, fare grafici, ...-->
+    <canvas bind:this={canvas} width="100" height="100"></canvas> <!--è uno spazio vuoto che ci permete di disegnare ogni singolo pixel, usato per fare disegni 2d, mettere disegni 3d, fare grafici, ...-->
     <nav> <!--ci metto dei controlli per gestire il disegno ()il quadrato creato sopra-->
         <label> <!--serve per poter selezionare l'input anche senza che io schiaccio sull'input stesso-->
             Size: <input type="range">
