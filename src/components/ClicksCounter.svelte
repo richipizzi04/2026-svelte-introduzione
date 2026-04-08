@@ -6,7 +6,7 @@
 
 <h1>Clicks Counter</h1>
 
-<button onclick={() => count++}>
+<button onclick={() => count++}> <!--quando clicco sul bottone, eseguo la funzione che aumenta di 1 il valore di count-->
     clicks: {count} <!--stampo il valore di count, ogni volta che clicco sul bottone, count aumenta di 1 e quindi il componente si aggiorna e mostra il nuovo valore di count-->
 </button>
 

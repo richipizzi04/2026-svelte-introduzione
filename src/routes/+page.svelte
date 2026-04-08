@@ -1,7 +1,8 @@
 <script> //scrivo il javascript qui dentro
-    import ClicksCounter from "../components/ClicksCounter.svelte"; //sono le due componenti che ho creato e le importo nella
-
+    import ClicksCounter from "../components/ClicksCounter.svelte"; //sono le due componenti che ho creato e le importo nella pagina principale, in questo modo posso usarle come se fossero dei tag html
     let count = $state(5)
+    let doubled = count * 2;
+
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -11,12 +12,8 @@
 <p>count from parent is {count}</p>
 <ClicksCounter initialCount={3}/> 
 
-
 <style>
     h1 {
         color: #B40123;
-    }
-    p {
-        color: #01b40a
     }
 </style>

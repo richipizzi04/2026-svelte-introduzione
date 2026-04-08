@@ -11,7 +11,7 @@
 {@render children()} 
 
 <footer>
-	<p>polimi 2026</p>
+	<p>©polimi 2026</p>
 </footer>
 
 <style> /*dice di trattare questo style css globalmente quindi applicato a tutti i p paragrafi*/
