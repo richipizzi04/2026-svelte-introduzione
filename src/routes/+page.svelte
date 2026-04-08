@@ -1,6 +1,7 @@
 <script> //scrivo il javascript qui dentro
     import ClicksCounter from "../components/ClicksCounter.svelte"; //sono le due componenti che ho creato e le importo nella pagina principale, in questo modo posso usarle come se fossero dei tag html
     import CanvasSquare from "../components/CanvasSquare.svelte"; //per fare comparire la linea sella size e il colore
+    import ToDoList from "../components/ToDoList.svelte";
 
     let count = $state(5)
     let doubled = count * 2;
@@ -19,8 +20,8 @@
     <p>count is not in range</p>
 {/if}
 
-
 <CanvasSquare/>
+<ToDoList/>
 
 <style>
     h1 {
